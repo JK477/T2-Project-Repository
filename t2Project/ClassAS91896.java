@@ -2,41 +2,40 @@
  * Write a description of class ClassAS91896 here.
  *
  * @author Jordan kelland
- * @version 5, 25/06/21
+ * @version 6, 30/06/21 - 08/07/21
  */
 
 import java.util.Scanner; //Keyboard input.
 
 public class ClassAS91896
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int x;
     private int y;
-    private int roundToPlay;
-    private int roundsPlayed;
+    
+    private double roundsToPlay = 0;
+    private int roundsPlayed = 0;
     private int coopWin = 2;
     private int coopLos = 0;
     private int defectWin = 3;
     private int defectTie = 1;
-    private int play1Score;
-    private int play2Score;
+    private int play1Score = 0;
+    private int play2Score = 0;
 
-    //Constructor for objects of class ClassAS91896
-    public ClassAS91896()
+    public ClassAS91896() //Constructor for objects of class ClassAS91896
     {
-        // initialise instance variables
+        // initializes instance variables
         Scanner inputboard = new Scanner(System.in);
 
         String play1Name; //will hold player one entered name
-        String play2Name; //will hold player two entered name
-        
-        boolean playingGame = true;
+        String play2Name; //will hold player two name
 
         String p1CommandInput; //will hold player one entered command
         String p2CommandInput; //will hold player two entered command
         String coopVar = "cooperate"; //used to compare entered commands
         String defectVar = "defect"; //used to compare entered commands 
         
+        //Game start
         System.out.println("Prisoner's Dilemma description");
         System.out.println("Prisoner's Dilemma Rules");
         
@@ -44,9 +43,11 @@ public class ClassAS91896
         play1Name = inputboard.nextLine(); //assigns entered name to String p1Name 
         play2Name = "Computer"; //player 2 name
 
-        roundToPlay = 5; //will make random
+        double roundsToPlay = 5 + (Math.random()*20); //will make random
 
-        while (playingGame) {
+        System.out.print(roundsToPlay); //to test the random fuction
+        
+        while (roundsPlayed < roundsToPlay) {
 
             System.out.println(play1Name+" enter your move; Cooperate or Defect");
             p1CommandInput = inputboard.nextLine(); //player1 command input
@@ -77,26 +78,23 @@ public class ClassAS91896
                 System.out.println(play1Name+"'s outcome is Defect Win");
                 System.out.println(play2Name+"'s outcome is Cooperation Lose");
             } else {
-                System.out.println("An Error has occured");
+                System.out.println("An Error has occured"); //need to work on this section
                 //System.out.println(play1Name+" re enter your move; Cooperate or Defect");
                 //p1CommandInput = inputboard.nextLine();
                 //System.out.println(play1Name+" your move was "+p1CommandInput);
                 //System.out.println(play2Name+" your move was "+p2CommandInput);
             }
-        }
+            
+            roundsPlayed = roundsPlayed + 1;
+            
+            //should also hold each players score for each round in array, will add at end 
+            
+        } //this is the end of the loop
             
         System.out.println(play1Name+" your score is "+play1Score);
         System.out.println(play2Name+" your score is "+play2Score);
         
-        //boolean play1Win = false;
-        //boolean play2Win = false;
-        //boolean play1Los = false;
-        //boolean play2Los = false;
-        //System.out.println(play1Win);
-        //System.out.println(play2Win);
-        //System.out.println(play1Los);
-        //System.out.println(play2Los);
-        
+
     }
 
     /**
