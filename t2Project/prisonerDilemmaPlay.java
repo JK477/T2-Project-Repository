@@ -2,7 +2,7 @@
  * Write a description of class prisonerDilemmaPlay here.
  *
  * @author Jordan Kelland
- * @version 8, 06/08/2021 - 13/08/2021
+ * @version 9, 24/08/2021
  */
 
 import java.util.Scanner; //Keyboard input.
@@ -67,9 +67,9 @@ public class prisonerDilemmaPlay
 
         //Game start
         System.out.println("Prisoner's Dilemma Description:");
-        System.out.println("You are a member of a criminal organisation & have commited many crimes.\nYou are arrested & imprisoned on one of the lesser crimes you commited along with another member of your criminal organisation.\nThe prosecutor of the criminal case can convict you on your lesser crime, \nbut lacks sufficient evidence to convict either of you on one of your more serious crimes.\nBecause of the prosecuter having a lack in sufficient evidence he simultaneousily offers both of you a deal.\nBoth you & the other prisoner have the opportunity to either betray the other by testifying to the crime comitted by the other prisoner, \nor to cooperate with the other prisoner & remain sileant.\n");
+        System.out.println("You are a member of a criminal organisation & have commited many crimes.\nYou are arrested & imprisoned on one of the lesser crimes you commited along with another member of your criminal organisation.\nThe prosecutor of the criminal case can convict you on your lesser crime,\n but lacks sufficient evidence to convict either of you on one of your more serious crimes.\nBecause of the prosecuter having a lack in sufficient evidence he simultaneousily offers both of you a deal.\nBoth you & the other prisoner have the opportunity to either betray the other by testifying to the crime comitted by the other prisoner,\n or to cooperate with the other prisoner & remain sileant.\n");
         System.out.println("Prisoner's Dilemma Rules:");
-        System.out.println("There are between 5 & 20 rounds per game. The player with the highest score wins.\nIn this game you must either “Cooperate” or “Defect” the possible outcomes are:\nPlayer 1 & 2 both defect against each other. Results in 1 point for player 1 & 2.\nPlayer 1 & 2 both cooperate with each other. Results in 2 points for player 1 & 2.\nPlayer 1 defects but player 2 cooperates. Results in 3 points for player 1 & 0 points for player 2.\nPlayer 1 cooperates but player 2 defects. Results in 0 points for player 1 & 3 points for player 2.\n");
+        System.out.println("There are between 5 & 20 rounds per game. The player with the highest score wins.\nIn this game you must either “cooperate” or “defect” the possible outcomes are:\nPlayer 1 & 2 both defect against each other. Results in 1 point for player 1 & 2.\nPlayer 1 & 2 both cooperate with each other. Results in 2 points for player 1 & 2.\nPlayer 1 defects but player 2 cooperates. Results in 3 points for player 1 & 0 points for player 2.\nPlayer 1 cooperates but player 2 defects. Results in 0 points for player 1 & 3 points for player 2.\n");
 
         System.out.println("Player one please enter your name:"); //player one enters their name.
         p1Name = inputboard.nextLine(); //assigns entered name to player 1.
@@ -92,23 +92,23 @@ public class prisonerDilemmaPlay
 
             //this if statement compares both of the players commands with possibly chosen commands to determine an the round outcome.
             if (p1CommandInput.equals(coopVar) && p2CommandInput.equals(coopVar)) { //this outcome results in player 1 & 2 cooperation win.
-                p1Score = p1Score + coopWin;
-                p2Score = p2Score + coopWin;
+                p1Score = p1Score + coopWin; //adds the point value of a cooperation win to player 1.
+                p2Score = p2Score + coopWin; //adds the point value of a cooperation win to player 2.
                 System.out.println(p1Name + " outcome is Cooperation Win.");
                 System.out.println(p2Name + " outcome is Cooperation Win.");
             } else if (p1CommandInput.equals(coopVar) && !p2CommandInput.equals(coopVar)) { //this outcome results in player 1 cooperation loss & player 2 defect win.
-                p1Score = p1Score + coopLos;
-                p2Score = p2Score + defectWin;
+                p1Score = p1Score + coopLos; //adds the point value of a cooperation loss to player 1.
+                p2Score = p2Score + defectWin; //adds the point value of a defect win to player 2.
                 System.out.println(p1Name + " outcome is Cooperation Lose.");
                 System.out.println(p2Name + " outcome is Defect Win.");
             } else if (p1CommandInput.equals(defectVar) && p2CommandInput.equals(defectVar)) { //this outcome results in player 1 & 2 defect tie.
-                p1Score = p1Score + defectTie;
-                p2Score = p2Score + defectTie;
+                p1Score = p1Score + defectTie; //adds the point value of a defect tie to player 1.
+                p2Score = p2Score + defectTie; //adds the point value of a defect tie to player 2.
                 System.out.println(p1Name + " outcome is Defect Tie.");
                 System.out.println(p2Name + " outcome is Defect Tie.");
             } else if (p1CommandInput.equals(defectVar) && !p2CommandInput.equals(defectVar)) { //this outcome results in player 1 defect win & player 2 cooperation loss.
-                p1Score = p1Score + defectWin;
-                p2Score = p2Score + coopLos;
+                p1Score = p1Score + defectWin; //adds the point value of a defect win to player 1.
+                p2Score = p2Score + coopLos; //adds the point value of a cooperation loss to player 2.
                 System.out.println(p1Name + " outcome is Defect Win.");
                 System.out.println(p2Name + " outcome is Cooperation Lose.");
             }
@@ -116,17 +116,19 @@ public class prisonerDilemmaPlay
             roundPlayed = roundPlayed + 1; //this updates the rounds played by 1 for each round played.
             roundCounter = roundCounter + 1; //this updates the round count by 1 for each round played.
         } //end of round engine
-
+        
+        System.out.println("\nGame Results"); //game results
+        
         if(p1Score == p2Score) { //this prints out the player positions of the played game, along with their total score.
-            System.out.println("\nBoth players tied");
-            System.out.println(p1Name + " your score is " + p1Score);
-            System.out.println(p2Name + " your score is " + p2Score);
+            System.out.println("Both players tied");
+            System.out.println(p1Name + " score is " + p1Score);
+            System.out.println(p2Name + " score is " + p2Score);
         } else if (p1Score > p2Score) {
             System.out.println(p1Name + " is the winner with " + p1Score);
-            System.out.println(p2Name + " your score is " + p2Score);
+            System.out.println(p2Name + " score is " + p2Score);
         } else {
             System.out.println(p2Name + " is the winner with " + p2Score);
-            System.out.println(p1Name + " your score is " + p1Score);
+            System.out.println(p1Name + " score is " + p1Score);
         } 
 
         System.out.println("\nGame Over"); //the end of the program
