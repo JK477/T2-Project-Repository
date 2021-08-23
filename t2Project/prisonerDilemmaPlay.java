@@ -67,9 +67,9 @@ public class prisonerDilemmaPlay
 
         //Game start
         System.out.println("Prisoner's Dilemma Description:");
-        System.out.println("You are a member of a criminal organisation & have commited many crimes. \nYou are arrested & imprisoned on one of the lesser crimes you commited along with another member of your criminal organisation. \nThe prosecutor of the criminal case can convict you on your lesser crime,\nbut lacks sufficient evidence to convict either of you on one of your more serious crimes. \nBecause of the prosecuter having a lack in sufficient evidence he simultaneousily offers both of you a deal. \nBoth you & the other prisoner have the opportunity to either betray the other by testifying to the crime comitted by the other prisoner,\nor to cooperate with the other prisoner & remain sileant.\n");
+        System.out.println("You are a member of a criminal organisation & have commited many crimes.\nYou are arrested & imprisoned on one of the lesser crimes you commited along with another member of your criminal organisation.\nThe prosecutor of the criminal case can convict you on your lesser crime, \nbut lacks sufficient evidence to convict either of you on one of your more serious crimes.\nBecause of the prosecuter having a lack in sufficient evidence he simultaneousily offers both of you a deal.\nBoth you & the other prisoner have the opportunity to either betray the other by testifying to the crime comitted by the other prisoner, \nor to cooperate with the other prisoner & remain sileant.\n");
         System.out.println("Prisoner's Dilemma Rules:");
-        System.out.println("There are between 5 & 20 rounds per game. The player with the highest score wins. \nIn this game you must either “Cooperate” or “Defect” the possible outcomes are: \nPlayer 1 & 2 both defect against each other. Results in 1 point for player 1 & 2. \nPlayer 1 & 2 both cooperate with each other. Results in 2 points for player 1 & 2. \nPlayer 1 defects but player 2 cooperates. Results in 3 points for player 1 & 0 points for player 2. \nPlayer 1 cooperates but player 2 defects. Results in 0 points for player 1 & 3 points for player 2.\n");
+        System.out.println("There are between 5 & 20 rounds per game. The player with the highest score wins.\nIn this game you must either “Cooperate” or “Defect” the possible outcomes are:\nPlayer 1 & 2 both defect against each other. Results in 1 point for player 1 & 2.\nPlayer 1 & 2 both cooperate with each other. Results in 2 points for player 1 & 2.\nPlayer 1 defects but player 2 cooperates. Results in 3 points for player 1 & 0 points for player 2.\nPlayer 1 cooperates but player 2 defects. Results in 0 points for player 1 & 3 points for player 2.\n");
 
         System.out.println("Player one please enter your name:"); //player one enters their name.
         p1Name = inputboard.nextLine(); //assigns entered name to player 1.
@@ -79,7 +79,7 @@ public class prisonerDilemmaPlay
 
         while (roundPlaying > roundPlayed) { //round engine.
             System.out.println("\nround " + roundCounter);
-            System.out.println(p1Name + " enter your move; Cooperate or Defect");
+            System.out.println(p1Name + " enter your move; cooperate or defect");
             p1CommandInput = getCommand1(); //player1 valid command input.
             p2CommandInput = getCommand2(); //player2 valid command input.
 
