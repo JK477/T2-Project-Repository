@@ -1,9 +1,15 @@
 #BlueJ class context
 comment0.target=prisonerDilemmaPlay
 comment1.params=
-comment1.target=java.lang.String\ getCommand1()
+comment1.target=java.lang.String\ getGameMode()
 comment2.params=
-comment2.target=java.lang.String\ getCommand2()
+comment2.target=java.lang.String\ getP1Name()
 comment3.params=
-comment3.target=prisonerDilemmaPlay()
-numComments=4
+comment3.target=java.lang.String\ getP2Name()
+comment4.params=
+comment4.target=java.lang.String\ getCommand1()
+comment5.params=
+comment5.target=java.lang.String\ getCommand2()
+comment6.params=
+comment6.target=prisonerDilemmaPlay()
+numComments=7
